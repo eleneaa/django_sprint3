@@ -24,7 +24,7 @@ def test_blog_in_rus():
 
 
 @pytest.mark.parametrize(('n_model', 'n_verbose', 'n_verbose_plural'), [
-    ('Category', 'категория', 'Категории'),
+    ('Blog_Category', 'категория', 'Категории'),
     ('Location', 'местоположение', 'Местоположения'),
     ('Post', 'публикация', 'Публикации'),
 ])
@@ -52,11 +52,11 @@ def test_models_translated(n_model, n_verbose, n_verbose_plural):
 
 
 @pytest.mark.parametrize(('n_model', 'param', 'n_verbose'), [
-    ('Category', 'is_published', 'Опубликовано'),
-    ('Category', 'title', 'Заголовок'),
-    ('Category', 'slug', 'Идентификатор'),
-    ('Category', 'description', 'Описание'),
-    ('Category', 'created_at', 'Добавлено'),
+    ('Blog_Category', 'is_published', 'Опубликовано'),
+    ('Blog_Category', 'title', 'Заголовок'),
+    ('Blog_Category', 'slug', 'Идентификатор'),
+    ('Blog_Category', 'description', 'Описание'),
+    ('Blog_Category', 'created_at', 'Добавлено'),
     ('Location', 'name', 'Название места'),
     ('Location', 'created_at', 'Добавлено'),
     ('Location', 'is_published', 'Опубликовано'),
@@ -81,12 +81,12 @@ def test_models_params_translate(n_model, param, n_verbose):
 
 @pytest.mark.parametrize(('n_model', 'param', 'text'), [
     (
-        'Category',
+        'Blog_Category',
         'is_published',
         'Снимите галочку, чтобы скрыть публикацию.'
     ),
     (
-        'Category',
+        'Blog_Category',
         'slug',
         'Идентификатор страницы для URL; '
         'разрешены символы латиницы, цифры, дефис и подчёркивание.'

@@ -4,7 +4,7 @@ from django.db import models
 User = get_user_model()
 
 
-class Category(models.Model):
+class Blog_Category(models.Model):
     title = models.CharField(max_length=256,
                              verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
@@ -67,7 +67,7 @@ class Post(models.Model):
         on_delete=models.SET_NULL,
         verbose_name='Местоположение')
     category = models.ForeignKey(
-        Category,
+        Blog_Category,
         on_delete=models.CASCADE,
         verbose_name='Категория')
     is_published = models.BooleanField(
