@@ -68,12 +68,12 @@ def posts_with_unpublished_locations(
 
 @pytest.fixture
 def published_category(mixer):
-    return mixer.blend('blog.Category', is_published=True)
+    return mixer.blend('blog.Blog_Category', is_published=True)
 
 
 @pytest.fixture
 def another_published_category(mixer):
-    return mixer.blend('blog.Category', is_published=True)
+    return mixer.blend('blog.Blog_Category', is_published=True)
 
 
 @pytest.fixture
@@ -93,7 +93,7 @@ def unpublished_post(mixer):
 
 @pytest.fixture
 def unpublished_category(mixer):
-    return mixer.blend('blog.Category', is_published=False)
+    return mixer.blend('blog.Blog_Category', is_published=False)
 
 
 @pytest.fixture
