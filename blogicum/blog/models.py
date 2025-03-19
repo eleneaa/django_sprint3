@@ -6,23 +6,23 @@ User = get_user_model()
 
 class Category(models.Model):
     title = models.CharField(max_length=256,
-                             verbose_name='Название категории')
+                             verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
     slug = models.SlugField(
         unique=True,
         verbose_name='Идентификатор',
         help_text='Идентификатор страницы для URL;'
-                  ' разрешены символы латиницы, цифры,'
+                  ' разрешены символы латиницы, цифры, '
                   'дефис и подчёркивание.')
     is_published = models.BooleanField(
         default=True,
         verbose_name='Опубликовано',
         help_text='Снимите галочку, чтобы скрыть публикацию.')
     created_at = models.DateTimeField(auto_now_add=True,
-                                      verbose_name='Дата создания')
+                                      verbose_name='Добавлено')
 
     class Meta:
-        verbose_name = 'Категория'
+        verbose_name = 'категория'
         verbose_name_plural = 'Категории'
 
     def __str__(self):
@@ -39,11 +39,11 @@ class Location(models.Model):
         help_text='Снимите галочку, чтобы скрыть публикацию.')
     created_at = models.DateTimeField(
         auto_now_add=True,
-        verbose_name='Дата создания')
+        verbose_name='Добавлено')
 
     class Meta:
-        verbose_name = 'Локация'
-        verbose_name_plural = 'Локации'
+        verbose_name = 'местоположение'
+        verbose_name_plural = 'Местоположения'
 
     def __str__(self):
         return self.name
@@ -79,8 +79,8 @@ class Post(models.Model):
         verbose_name='Добавлено')
 
     class Meta:
-        verbose_name = 'Пост'
-        verbose_name_plural = 'Посты'
+        verbose_name = 'публикация'
+        verbose_name_plural = 'Публикации'
 
     def __str__(self):
         return self.title
