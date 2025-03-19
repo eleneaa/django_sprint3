@@ -68,8 +68,10 @@ class Post(models.Model):
         verbose_name='Местоположение')
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE,
-        verbose_name='Категория')
+        on_delete=models.SET_NULL,
+        verbose_name='Категория',
+        null=False
+        )
     is_published = models.BooleanField(
         default=True,
         verbose_name='Опубликовано',
