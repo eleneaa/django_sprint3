@@ -24,7 +24,6 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'категория'
         verbose_name_plural = 'Категории'
-        db_table = "blog_category"
 
     def __str__(self):
         return self.title
