@@ -10,7 +10,7 @@ try:
 except ImportError:
     raise AssertionError(
         'В приложении `blog` опишите '
-        'модели `Post, Blog_Category, Location`'
+        'модели `Post, Category, Location`'
     )
 except RuntimeError:
     registered_apps = set(app.name for app in apps.get_app_configs())
@@ -91,7 +91,7 @@ def get_post_list_context_key(
 
 @pytest.fixture
 def main_page_post_list_context_key(mixer, user_client):
-    temp_category = mixer.blend('blog.Blog_Category', is_published=True)
+    temp_category = mixer.blend('blog.Category', is_published=True)
     temp_location = mixer.blend('blog.Location', is_published=True)
     temp_post = mixer.blend('blog.Post', is_published=True,
                             location=temp_location, category=temp_category)
@@ -118,7 +118,7 @@ def main_page_post_list_context_key(mixer, user_client):
 
 @pytest.fixture
 def category_page_post_list_context_key(mixer, user_client):
-    temp_category = mixer.blend('blog.Blog_Category', is_published=True)
+    temp_category = mixer.blend('blog.Category', is_published=True)
     temp_location = mixer.blend('blog.Location', is_published=True)
     temp_post = mixer.blend(
         'blog.Post', is_published=True,
