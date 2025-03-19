@@ -2,7 +2,7 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
-from .models import Post, Blog_Category
+from .models import Post, Category
 
 
 def index(request):
@@ -31,7 +31,7 @@ def post_detail(request, id):
 
 
 def category_posts(request, category_slug):
-    category = get_object_or_404(Blog_Category,
+    category = get_object_or_404(Category,
                                  slug=category_slug,
                                  is_published=True)
 
